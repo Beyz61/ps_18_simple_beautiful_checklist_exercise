@@ -30,7 +30,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.light,
-        textTheme: GoogleFonts.robotoMonoTextTheme(Theme.of(context).textTheme),
+        textTheme: GoogleFonts.robotoMonoTextTheme(), // der key wird mehrfach verwendet dadurch wird es überschnitten
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
@@ -38,7 +38,7 @@ class MainApp extends StatelessWidget {
           ThemeData(brightness: Brightness.dark).textTheme,
         ),
       ),
-      themeMode: ThemeMode.dark, // themomode.system habe ich in dark geändert.
+      themeMode: ThemeMode.system, // themomode.system habe ich in dark geändert.
       title: 'Checklisten App',
       initialRoute: '/',
       routes: {
