@@ -41,7 +41,7 @@ class ItemList extends StatelessWidget {
                         ),
                         actions: [
                           TextButton(
-                            child: const Text('Abbrechen'),
+                            child: const Text("Abbrechen"),
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
@@ -63,8 +63,32 @@ class ItemList extends StatelessWidget {
               IconButton(
                 icon: const Icon(Icons.delete),
                 onPressed: () {
-                  repository.deleteItem(index);
-                  updateOnChange();
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: const Text("Task entfernen?"),
+                        content: const Text(
+                            "Bist du dir sicher?"),
+                        actions: [
+                          TextButton(
+                            child: const Text("Nein"),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                          TextButton(
+                            child: const Text("Ja"),
+                            onPressed: () {
+                              repository.deleteItem(index);
+                              updateOnChange();
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        ],
+                      );
+                    },
+                  );
                 },
               ),
             ],
