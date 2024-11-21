@@ -38,7 +38,7 @@ class MainApp extends StatelessWidget {
           ThemeData(brightness: Brightness.dark).textTheme,
         ),
       ),
-      themeMode: ThemeMode.system, // themomode.system habe ich in dark geändert.
+      themeMode: ThemeMode.system, // themomode.system kann ich  in dark ändern damit es dunkel bleibt.
       title: 'Checklisten App',
       initialRoute: '/',
       routes: {
