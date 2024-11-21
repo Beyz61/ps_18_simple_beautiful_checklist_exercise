@@ -17,7 +17,7 @@ class MockDatabase implements DatabaseRepository {
 
   @override
   Future<void> addItem(String item) async {
-    //make sure item doesn't exist yet and is not empty
+
     if (item.isNotEmpty && !_items.contains(item)) _items.add(item);
   }
 
@@ -28,7 +28,7 @@ class MockDatabase implements DatabaseRepository {
 
   @override
   Future<void> editItem(int index, String newItem) async {
-    // make sure not empty and not same as other
+
     if (newItem.isNotEmpty && !_items.contains(newItem)) {
       _items[index] = newItem;
     }
